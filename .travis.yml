@@ -12,6 +12,7 @@ jobs:
     - stage: build and publish
       language: java
       install: skip
+      before_script: chmod 777 gradlew
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
